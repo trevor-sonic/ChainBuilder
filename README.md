@@ -153,14 +153,14 @@ class ViewController: UIViewController {
 ## Installation
 
 #### CocoaPods
-Removed, no longer need. Use lovely SPM.
+Removed, no longer need it. Use lovely SPM.
 
 #### Carthage
-Removed
+Removed, no longer need it. Use lovely SPM.
 
 #### Swift Package Manager
 ```
-.package(url: "https://github.com/trevor-sonic/ChainBuilder.git", from: "version")
+.package(url: "https://github.com/trevor-sonic/ChainBuilder.git", from: "1.0.0")
 ```
 
 ## License
