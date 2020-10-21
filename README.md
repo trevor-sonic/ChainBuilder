@@ -88,7 +88,7 @@ class Dog: Chainable {
 }
 
 let dog = Dog().chain
-    .name("Copernicus")
+    .name("Duggie")
     .build()
 ```
 
