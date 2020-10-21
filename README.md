@@ -31,10 +31,10 @@ let label: UILabel = {
 ## Usage
 
 ```swift
-let builder: Builder<UIView> = UIView().chain
+let chain: Chain<UIView> = UIView().chain
 ```
 
-If you access `.chain`, it returns `Builder` that provides setter of properties via KeyPath dynamicMemberLookup.
+If you access `.chain`, it returns `Chain` that provides setter of properties via KeyPath dynamicMemberLookup.
 
 ```swift
 let view: UIView = UIView().chain
@@ -43,11 +43,11 @@ let view: UIView = UIView().chain
     .build()
 ```
 
-Finally, if you call `.build()`, `Builder` returns instance that has set property values.
+Finally, if you call `.build()`, `Chain` returns instance that has set property values.
 
 #### How to access methods
 
-If you want to access methods of object which is building, `func reinforce(_ handler: (Base) -> Void) Builder<Base>` enable to access methods.
+If you want to access methods of object which is building, `func reinforce(_ handler: (Base) -> Void) Chain<Base>` enable to access methods.
 
 ```swift
 let collectionView = UICollectionView().chain
@@ -58,7 +58,7 @@ let collectionView = UICollectionView().chain
     .build()
 ```
 
-`Builder` has `func reinforce<T1, ...>(_ t1: T1, ..., handler: (Base) -> Void) Builder<Base>` methods.
+`Chain` has `func reinforce<T1, ...>(_ t1: T1, ..., handler: (Base) -> Void) Chain<Base>` methods.
 In additional usage, be able to access outside object with `func reinforce` if passing objects as arguments.
 
 ```swift
@@ -92,14 +92,14 @@ let dog = Dog().chain
     .build()
 ```
 
-2. Use Builder directly
+2. Use Chain directly
 
 ```swift
 class Dog {
     var name: String
 }
 
-let dog = Builder(Dog())
+let dog = Chain(Dog())
     .name("Lassie")
     .build()
 ```
