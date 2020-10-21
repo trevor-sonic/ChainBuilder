@@ -2,13 +2,9 @@
 
 <p align="center">
 <a href="https://travis-ci.org/marty-suzuki/DuctTape"><img alt="CI Status" src="https://img.shields.io/travis/marty-suzuki/DuctTape.svg?style=flat"/></a>
-<a href="https://cocoapods.org/pods/DuctTape"><img alt="Pod" src="https://img.shields.io/cocoapods/v/DuctTape.svg?style=flat"/></a>
-<a href="https://github.com/Carthage/Carthage"><img alt="Carthage" src="https://img.shields.io/badge/Carthage-compatible-yellow.svg"/></a
 <a href="https://swift.org/package-manager"><img alt="SwiftPM" src="https://img.shields.io/badge/SwiftPM-compatible-green.svg"/></a>
 <br/>
 <a href="https://developer.apple.com/swift"><img alt="Swift5" src="https://img.shields.io/badge/language-Swift5-orange.svg"/></a>
-<a href="https://cocoapods.org/pods/DuctTape"><img alt="Platform" src="https://img.shields.io/cocoapods/p/DuctTape.svg?style=flat"/></a>
-<a href="https://cocoapods.org/pods/DuctTape"><img alt="License" src="https://img.shields.io/cocoapods/l/DuctTape.svg?style=flat"/></a>
 </p>
 
 📦 KeyPath dynamicMemberLookup based syntax sugar for Swift.
