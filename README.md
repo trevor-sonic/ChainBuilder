@@ -62,7 +62,7 @@ let collectionView = UICollectionView().chain
 In additional usage, be able to access outside object with `func reinforce` if passing objects as arguments.
 
 ```swift
-lazy var collectionView = UICollectionView().ductTape
+lazy var collectionView = UICollectionView().chain
     .translatesAutoresizingMaskIntoConstraints(false)
     .reinforce(view) { collectionView, view in
         view.addSubview(collectionView)
@@ -80,7 +80,7 @@ lazy var collectionView = UICollectionView().ductTape
 
 There are two ways to use DuctTape.
 
-1. Use DuctTapeCompatible
+1. Use Chainable
 
 ```swift
 class Dog: Chainable {
