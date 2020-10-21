@@ -1,4 +1,4 @@
-# DuctTape
+# Chain Builder
 
 <p align="center">
 <a href="https://travis-ci.org/marty-suzuki/DuctTape"><img alt="CI Status" src="https://img.shields.io/travis/marty-suzuki/DuctTape.svg?style=flat"/></a>
@@ -14,7 +14,7 @@
 📦 KeyPath dynamicMemberLookup based syntax sugar for Swift.
 
 ```swift
-let label = UILabel().ductTape
+let label = UILabel().chain
     .numberOfLines(0)
     .textColor(.red)
     .text("Hello, World!!")
@@ -35,16 +35,14 @@ let label: UILabel = {
 
 ## Usage
 
-NSObject already has been compatible with DuctTape, so you can access `.ductTape` property like below.
-
 ```swift
-let builder: Builder<UIView> = UIView().ductTape
+let builder: Builder<UIView> = UIView().chain
 ```
 
-If you access `.ductTape`, it returns `Builder` that provides setter of properties via KeyPath dynamicMemberLookup.
+If you access `.chain`, it returns `Builder` that provides setter of properties via KeyPath dynamicMemberLookup.
 
 ```swift
-let view: UIView = UIView().ductTape
+let view: UIView = UIView().chain
     .backgroundColor(.red)
     .translatesAutoresizingMaskIntoConstraints(false)
     .build()
@@ -57,7 +55,7 @@ Finally, if you call `.build()`, `Builder` returns instance that has set propert
 If you want to access methods of object which is building, `func reinforce(_ handler: (Base) -> Void) Builder<Base>` enable to access methods.
 
 ```swift
-let collectionView = UICollectionView().ductTape
+let collectionView = UICollectionView().chain
     .backgroundColor(.red)
     .reinforce { collectionView in
         collectionView.register(UITableViewCell.self, forCellWithReuseIdentifier: "Cell")
@@ -83,18 +81,18 @@ lazy var collectionView = UICollectionView().ductTape
     .build()
 ```
 
-#### How to use DuctTape with self-implemented classes
+#### How to use ChainBuilder with self-implemented classes
 
 There are two ways to use DuctTape.
 
 1. Use DuctTapeCompatible
 
 ```swift
-class Dog: DuctTapeCompatible {
+class Dog: Chainable {
     var name: String
 }
 
-let dog = Dog().ductTape
+let dog = Dog().chain
     .name("Copernicus")
     .build()
 ```
@@ -107,7 +105,7 @@ class Dog {
 }
 
 let dog = Builder(Dog())
-    .name("Copernicus")
+    .name("Lassie")
     .build()
 ```
 
@@ -117,7 +115,7 @@ let dog = Builder(Dog())
 class ViewController: UIViewController {
 
     let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        .ductTape
+        .chain
         .minimumLineSpacing(10)
         .minimumInteritemSpacing(10)
         .itemSize(CGSize(width: 100, height: 100))
@@ -126,7 +124,7 @@ class ViewController: UIViewController {
 
     lazy var collectionView: UICollectionView = UICollectionView(frame: .zero,
                                                                  collectionViewLayout: flowLayout)
-        .ductTape
+        .chain
         .dataSource(self)
         .delegate(self)
         .translatesAutoresizingMaskIntoConstraints(false)
@@ -160,31 +158,18 @@ class ViewController: UIViewController {
 ## Installation
 
 #### CocoaPods
-
-DuctTape is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your `Podfile`:
-
-```ruby
-pod "DuctTape"
-```
+Removed, no longer need. Use lovely SPM.
 
 #### Carthage
-
-If you’re using [Carthage](https://github.com/Carthage/Carthage), simply add
-DuctTape to your `Cartfile`:
-
-```
-github "marty-suzuki/DuctTape"
-```
+Removed
 
 #### Swift Package Manager
-
-Simply add the following line to your `Package.swift`:
-
 ```
-.package(url: "https://github.com/marty-suzuki/DuctTape.git", from: "version")
+.package(url: "https://github.com/marty-suzuki/ChainBuilder.git", from: "version")
 ```
 
 ## License
+ChainBuilder is released under the MIT License.
+Originally forked from github "marty-suzuki/DuctTape"
+I just removed useless Pod and Carthage installs and also renamed to my taste.
 
-DuctTape is released under the MIT License.
