@@ -1,20 +1,20 @@
 import XCTest
-@testable import DuctTape
+@testable import ChainBuilder
 
-final class DuctTapeTests: XCTestCase {
+final class ChainBuilderTests: XCTestCase {
 
     static var allTests = [
-        ("testDuctTape_dynamicMemberLookup", testDuctTape_dynamicMemberLookup),
-        ("testDuctTape_reinforce", testDuctTape_reinforce)
+        ("testDuctTape_dynamicMemberLookup", testChainBuilder_dynamicMemberLookup),
+        ("testDuctTape_reinforce", testChainBuilder_reinforce)
     ]
 
-    func testDuctTape_dynamicMemberLookup() {
+    func testChainBuilder_dynamicMemberLookup() {
         let intValue = Int(arc4random())
         let stringValue = String(arc4random())
         let boolValue = arc4random() % 2 == 0
 
         let object = Object()
-            .ductTape
+            .chain
             .intValue(intValue)
             .stringValue(stringValue)
             .boolValue(boolValue)
@@ -25,13 +25,13 @@ final class DuctTapeTests: XCTestCase {
         XCTAssertEqual(object.boolValue, boolValue)
     }
 
-    func testDuctTape_reinforce() {
+    func testChainBuilder_reinforce() {
         let intValue = Int(arc4random())
         let stringValue = String(arc4random())
         let boolValue = arc4random() % 2 == 0
 
         let object = Object()
-            .ductTape
+            .chain
             .reinforce {
                 $0.intValue = intValue
                 $0.stringValue = stringValue
@@ -44,12 +44,12 @@ final class DuctTapeTests: XCTestCase {
         XCTAssertEqual(object.boolValue, boolValue)
     }
 
-    func testDuctTape_without_protocol() {
+    func testChainBuilder_without_protocol() {
         let intValue = Int(arc4random())
         let stringValue = String(arc4random())
         let boolValue = arc4random() % 2 == 0
 
-        let object = Builder(ObjectBase())
+        let object = Chain(ObjectBase())
             .reinforce {
                 $0.intValue = intValue
                 $0.stringValue = stringValue
@@ -68,5 +68,5 @@ final class DuctTapeTests: XCTestCase {
         var boolValue: Bool?
     }
 
-    private final class Object: ObjectBase, DuctTapeCompatible {}
+    private final class Object: ObjectBase, Chainable {}
 }

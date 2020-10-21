@@ -4,23 +4,23 @@
 import PackageDescription
 
 let package = Package(
-    name: "DuctTape",
+    name: "ChainBuilder",
     platforms: [
         .macOS(.v10_10), .iOS(.v9), .tvOS(.v10), .watchOS(.v3)
     ],
     products: [
         .library(
-            name: "DuctTape",
-            targets: ["DuctTape"]),
+            name: "ChainBuilder",
+            targets: ["ChainBuilder"]),
     ],
     dependencies: [
     ],
     targets: [
         .target(
-            name: "DuctTape",
+            name: "ChainBuilder",
             dependencies: []),
         .testTarget(
-            name: "DuctTapeTests",
-            dependencies: ["DuctTape"]),
+            name: "ChainBuilderTests",
+            dependencies: ["ChainBuilder"]),
     ]
 )
