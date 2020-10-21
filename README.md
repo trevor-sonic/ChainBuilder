@@ -165,7 +165,7 @@ Removed
 
 #### Swift Package Manager
 ```
-.package(url: "https://github.com/marty-suzuki/ChainBuilder.git", from: "version")
+.package(url: "https://github.com/trevor-sonic/ChainBuilder.git", from: "version")
 ```
 
 ## License
