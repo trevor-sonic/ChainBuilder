@@ -3,11 +3,10 @@
 <p align="center">
 <a href="https://travis-ci.org/marty-suzuki/DuctTape"><img alt="CI Status" src="https://img.shields.io/travis/marty-suzuki/DuctTape.svg?style=flat"/></a>
 <a href="https://swift.org/package-manager"><img alt="SwiftPM" src="https://img.shields.io/badge/SwiftPM-compatible-green.svg"/></a>
-<br/>
 <a href="https://developer.apple.com/swift"><img alt="Swift5" src="https://img.shields.io/badge/language-Swift5-orange.svg"/></a>
 </p>
 
-📦 KeyPath dynamicMemberLookup based syntax sugar for Swift.
+Make everything ```chainable```, add just ```.chain``` and keep typing.
 
 ```swift
 let label = UILabel().chain
